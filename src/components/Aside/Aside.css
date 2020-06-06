@@ -1,0 +1,54 @@
+.aside {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  height: 100%;
+  overflow: auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.aside a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  transition: 0.2s background ease-in;
+}
+ 
+.aside a.active {
+  background-color: #3e84e0;
+  color: white;
+}
+
+.aside a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+	.aside{
+		display:flex;
+	}
+  div.content {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.aside{
+		display:flex;
+		flex-direction:column;
+		text-align:center;
+	}
+}

@@ -1,10 +1,12 @@
 import React from 'react';
+import MyPosts from './MyPosts/MyPosts';
+import './Profile.css';
 
 function Profile() {
   return (
     <div className="profile">
-      <div className="profile__image">
-        <img src="https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg" alt="" />
+      <div className="profile__image--wrapper">
+        <img className="profile__image" src="https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg" alt="" />
       </div>
       <div className="user">
         <div className="user__wrapper">
@@ -22,17 +24,7 @@ function Profile() {
           </div>
         </div>
 
-        <div className="user__new-post">
-          <form action="/">
-            <textarea name="textarea" id="textarea" cols="30" rows="10" defaultValue="New Post"></textarea>
-            <button type="submit">Post</button>
-          </form>
-        </div>
-
-        <div className="user__posts">
-          <div className="user__post">1 post</div>
-          <div className="user__post">2 post</div>
-        </div>
+        <MyPosts />
       </div>
 
     </div>
