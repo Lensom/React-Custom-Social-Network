@@ -2,7 +2,7 @@ import React from 'react';
 import Post from './Post/Post';
 import './MyPosts.css';
 
-function MyPosts() {
+const MyPosts = () => {
   return (
     <div className="user__tape">
       <div className="user__new-post">
@@ -13,8 +13,8 @@ function MyPosts() {
       </div>
 
       <div className="user__posts">
-        <Post />
-        <Post />
+        <Post message="Hi, it's Name" like="23" />
+        <Post message="Hi, it's Surname" like="233" />
       </div>
     </div>
   )

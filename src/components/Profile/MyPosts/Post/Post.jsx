@@ -1,9 +1,14 @@
 import React from 'react';
 import './Post.css';
 
-function Post() {
+const Post = (props) => {
   return (
-    <div className="user__post">1 post</div>
+    <div className="user__post">
+      <div className="message">
+        {props.message}
+      </div>
+      <div className="like">{props.like}</div>
+    </div>
   )
 }
 

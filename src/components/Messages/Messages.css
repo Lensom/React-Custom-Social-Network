@@ -1,0 +1,21 @@
+.user__logotype {
+  max-width: 140px;
+}
+
+.user__wrapper {
+  display: flex;
+  justify-self: flex-start;
+}
+
+.user__info {
+  margin-left: 30px;
+}
+
+.profile__image {
+  height: inherit;
+}
+
+.profile__image--wrapper {
+  max-height: 300px;
+}
+

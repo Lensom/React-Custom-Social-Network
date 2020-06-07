@@ -2,7 +2,7 @@ import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
 import './Profile.css';
 
-function Profile() {
+const Profile = () => {
   return (
     <div className="profile">
       <div className="profile__image--wrapper">
