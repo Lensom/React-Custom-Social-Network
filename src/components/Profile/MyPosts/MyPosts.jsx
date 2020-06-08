@@ -2,7 +2,10 @@ import React from 'react';
 import Post from './Post/Post';
 import './MyPosts.css';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+  let postItem = props.posts.map(e => <Post id={e.id} message={e.msg} like={e.like} />)
+
   return (
     <div className="user__tape">
       <div className="user__new-post">
@@ -13,8 +16,7 @@ const MyPosts = () => {
       </div>
 
       <div className="user__posts">
-        <Post message="Hi, it's Name" like="23" />
-        <Post message="Hi, it's Surname" like="233" />
+        {postItem}
       </div>
     </div>
   )
