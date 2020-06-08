@@ -1,21 +1,16 @@
-.user__logotype {
-  max-width: 140px;
-}
-
-.user__wrapper {
+.messages {
   display: flex;
-  justify-self: flex-start;
+  
 }
 
-.user__info {
-  margin-left: 30px;
+.dialogs {
+  max-width: 300px;
+  height: 100%;
+  width: 100%;
 }
 
-.profile__image {
-  height: inherit;
+.message {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
-
-.profile__image--wrapper {
-  max-height: 300px;
-}
-

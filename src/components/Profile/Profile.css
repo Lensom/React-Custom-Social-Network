@@ -16,6 +16,9 @@
 }
 
 .profile__image--wrapper {
-  max-height: 300px;
+  height: 300px;
 }
 
+.profile__user {
+  margin: 30px 0;
+}

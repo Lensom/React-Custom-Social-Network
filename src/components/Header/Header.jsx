@@ -1,14 +1,16 @@
 import React from 'react';
 import './Header.css';
 
+import MenuIcon from '@material-ui/icons/Menu';
+
 const Header = () => {
   return (
     <header className="header">
-      <div className="logotype">
-        <a href="/">
-          <img src="https://pngimg.com/uploads/google/google_PNG19644.png" alt="" />
-        </a>
-      </div>
+      <nav>
+        <div className="nav-wrapper">
+          <a href="#" data-target="slide-out" className="sidenav-trigger"><MenuIcon fontSize="large">Menu</MenuIcon></a>
+        </div>
+      </nav>
     </header>
   )
 }
