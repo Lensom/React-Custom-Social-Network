@@ -6,10 +6,10 @@ const FriendItem = (props) => {
     <li className="friends__item">
       <a href={props.link} id={props.id} className="friend__link">
         <div className="friend__photo">
-          <img src={props.image} alt="" />
+          <img src={props.img} alt="" />
         </div>
         <div className="friend__name">
-          {props.image}
+          {props.name}
         </div>
       </a>
     </li>
