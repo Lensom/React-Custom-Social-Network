@@ -15,19 +15,16 @@ import { Route, BrowserRouter } from 'react-router-dom'
 
 const App = (props) => {
 
-
-
-
   return (
     <BrowserRouter>
       <div className="wrapper">
         <div className="main-page">
           <Header />
           <div className="content">
-            <Sidebar />
+            <Sidebar state={props.state.friendsPage} />
             <main className="main">
-              <Route path="/profile" render={() => <Profile posts={props.posts} />} />
-              <Route path="/messages" render={() => <Messages />} />
+              <Route path="/profile" render={() => <Profile state={props.state.profilePage} />} />
+              <Route path="/messages" render={() => <Messages state={props.state.messagePage} />} />
               <Route path="/news" render={() => <News />} />
               <Route path="/music" render={() => <Music />} />
               <Route path="/settings" render={() => <Settings />} />

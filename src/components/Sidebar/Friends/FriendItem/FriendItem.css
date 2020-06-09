@@ -1,0 +1,20 @@
+.friends {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.friends__item {
+  padding: 0 32px;
+  text-align: center;
+}
+
+.friend__photo {
+    max-width: 60px;
+}
+
+.sidenav .friend__link {
+  padding: 0;
+  height: auto;
+  display: block;
+}
