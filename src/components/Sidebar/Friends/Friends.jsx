@@ -8,6 +8,7 @@ const Friends = (props) => {
 
   return (
     <ul className="friends">
+      <li className="friends__title friends__item">Top friends:</li>
       {friendItems}
     </ul>
   )
