@@ -1,6 +1,8 @@
+let rerenderEntireTree = () => { };
+
 let posts = [
-  { id: 1, msg: "Hi, it's Name", like: 23 },
-  { id: 2, msg: "Hi, it's Surname", like: 233 }
+  { id: 1, msg: "Hi, it's Name", likesCount: 23 },
+  { id: 2, msg: "Hi, it's Surname", likesCount: 233 }
 ]
 
 let dialogs = [
@@ -25,6 +27,7 @@ let friends = [
 let state = {
   profilePage: {
     posts,
+    newPostText: ''
   },
   messagePage: {
     dialogs,
@@ -33,6 +36,27 @@ let state = {
   friendsPage: {
     friends
   }
+}
+
+export const addPost = () => {
+  let newPost = {
+    id: 3,
+    msg: state.profilePage.newPostText,
+    likesCount: 0
+  }
+
+  state.profilePage.posts.push(newPost)
+  state.profilePage.newPostText = '';
+  rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText
+  rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
 }
 
 export default state;
