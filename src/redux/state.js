@@ -6,10 +6,10 @@ let posts = [
 ]
 
 let dialogs = [
-  { id: '1', name: 'Alexey' },
-  { id: '2', name: 'Nastya' },
-  { id: '3', name: 'Vadim' },
-  { id: '4', name: 'Alcoholic' }
+  { id: '1', name: 'Alexey', img: 'https://www.gravatar.com/avatar/be299f224394ab488001c9cab12eae2c?d=wavatar&s=256' },
+  { id: '2', name: 'Nastya', img: 'https://www.gravatar.com/avatar/be299f224394ab488001c9cab12eae2c?d=wavatar&s=256' },
+  { id: '3', name: 'Vadim', img: 'https://www.gravatar.com/avatar/be299f224394ab488001c9cab12eae2c?d=wavatar&s=256' },
+  { id: '4', name: 'Alcoholic', img: 'https://www.gravatar.com/avatar/be299f224394ab488001c9cab12eae2c?d=wavatar&s=256' }
 ]
 
 let messages = [

@@ -7,10 +7,12 @@ import M from 'materialize-css';
 import SendIcon from '@material-ui/icons/Send';
 
 const Messages = (props) => {
+  console.log(props)
+
 
   const newPostElement = React.createRef();
 
-  let dialogsElements = props.state.dialogs.map(e => <DialogItem id={e.id} name={e.name} />)
+  let dialogsElements = props.state.dialogs.map(e => <DialogItem id={e.id} name={e.name} img={e.img} />)
   let messagesElements = props.state.messages.map(e => <MessageItem id={e.id} message={e.msg} />)
 
 
@@ -27,7 +29,7 @@ const Messages = (props) => {
   return (
     <div>
       <div className="messages">
-        <ul className="dialogs">
+        <ul className="dialogs collection">
           {dialogsElements}
         </ul>
         <div className="message">
