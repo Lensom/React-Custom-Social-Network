@@ -2,6 +2,10 @@ import React, { useEffect } from "react";
 import "./NewPost.css";
 import SendIcon from "@material-ui/icons/Send";
 import M from "materialize-css";
+import {
+  addPostActionCreator,
+  updateNewPostText,
+} from "../../../../redux/state";
 
 const NewPost = (props) => {
   const { state } = props;
@@ -12,12 +16,12 @@ const NewPost = (props) => {
   });
 
   const addPost = () => {
-    state.dispatch({ type: "ADD-POST" });
+    state.dispatch(addPostActionCreator());
   };
 
   const onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = { type: "UPDATE-NEW-POST-TEXT", newText: text };
+    let action = updateNewPostText(text);
     state.dispatch(action);
   };
 

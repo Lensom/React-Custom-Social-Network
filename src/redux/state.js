@@ -1,3 +1,5 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 let posts = [
   { id: 1, msg: "Hi, it's Name", likesCount: 23 },
   { id: 2, msg: "Hi, it's Surname", likesCount: 233 },
@@ -59,6 +61,15 @@ let friends = [
     link: "/",
   },
 ];
+
+export const addPostActionCreator = () => ({
+  type: ADD_POST,
+});
+
+export const updateNewPostText = (text) => ({
+  type: UPDATE_NEW_POST_TEXT,
+  newText: text,
+});
 
 let state = {
   profilePage: {
