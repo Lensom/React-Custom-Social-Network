@@ -1,24 +1,23 @@
-import React from 'react';
-import './NewPost.css';
-import SendIcon from '@material-ui/icons/Send';
-import M from 'materialize-css';
+import React, { useEffect } from "react";
+import "./NewPost.css";
+import SendIcon from "@material-ui/icons/Send";
+import M from "materialize-css";
 
-
-const NewPost = (props) => {
-  console.log(props)
+const NewPost = ({ state }) => {
   const newPostElement = React.createRef();
 
-  document.addEventListener('DOMContentLoaded', function () {
+  useEffect(() => {
     M.textareaAutoResize(newPostElement);
   });
+
   const addPost = () => {
-    props.state.addPost();
-  }
+    state.addPost();
+  };
 
   const onPostChange = () => {
     let text = newPostElement.current.value;
-    props.state.updateNewPostText(text)
-  }
+    state.updateNewPostText(text);
+  };
 
   return (
     <div className="user__new-post">
@@ -26,19 +25,25 @@ const NewPost = (props) => {
       <div className="input-field col s12">
         <textarea
           ref={newPostElement}
-          value={props.state.newPostText}
+          value={state.newPostText}
           onChange={onPostChange}
           id="textarea1"
           className="materialize-textarea"
         />
-        <label for="textarea1">Textarea</label>
+        <label htmlFor="textarea1">Textarea</label>
       </div>
-      <button onClick={addPost} className="btn waves-effect waves-light" type="submit" name="action">Submit
-           <SendIcon />
+      <button
+        onClick={addPost}
+        className="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+      >
+        Submit
+        <SendIcon />
       </button>
       {/* </form> */}
     </div>
-  )
-}
+  );
+};
 
 export default NewPost;

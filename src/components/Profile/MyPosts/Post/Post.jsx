@@ -1,15 +1,13 @@
-import React from 'react';
-import './Post.css';
+import React from "react";
+import "./Post.css";
 
-const Post = (props) => {
+const Post = ({ message, likesCount }) => {
   return (
     <div className="user__post">
-      <div className="message">
-        {props.message}
-      </div>
-      <div className="like">{props.likesCount}</div>
+      <div className="message">{message}</div>
+      <div className="like">{likesCount}</div>
     </div>
-  )
-}
+  );
+};
 
 export default Post;

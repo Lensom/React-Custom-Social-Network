@@ -1,52 +1,59 @@
-import React from 'react';
-import './Messages.css';
-import DialogItem from './DialogItem/DialogItem'
-import MessageItem from './MessageItem/MessageItem'
-import M from 'materialize-css';
+import React, { useEffect } from "react";
+import "./Messages.css";
+import DialogItem from "./DialogItem/DialogItem";
+import MessageItem from "./MessageItem/MessageItem";
+import M from "materialize-css";
 
-import SendIcon from '@material-ui/icons/Send';
+import SendIcon from "@material-ui/icons/Send";
 
-const Messages = (props) => {
-  console.log(props)
-
+const Messages = ({ state }) => {
+  const { dialogs, messages } = state;
 
   const newPostElement = React.createRef();
 
-  let dialogsElements = props.state.dialogs.map(e => <DialogItem id={e.id} name={e.name} img={e.img} />)
-  let messagesElements = props.state.messages.map(e => <MessageItem id={e.id} message={e.msg} />)
+  let dialogsElements = dialogs.map(({ id, name, img }) => (
+    <DialogItem id={id} name={name} img={img} />
+  ));
+  let messagesElements = messages.map(({ id, msg }) => (
+    <MessageItem id={id} message={msg} />
+  ));
 
-
-  document.addEventListener('DOMContentLoaded', function () {
+  useEffect(() => {
     M.textareaAutoResize(newPostElement);
   });
 
   const addMessage = () => {
     let text = newPostElement.current.value;
-    alert(text)
-  }
-
+    alert(text);
+  };
 
   return (
     <div>
       <div className="messages">
-        <ul className="dialogs collection">
-          {dialogsElements}
-        </ul>
-        <div className="message">
-          {messagesElements}
-        </div>
+        <ul className="dialogs collection">{dialogsElements}</ul>
+        <div className="message">{messagesElements}</div>
       </div>
       <div className="message__textarea">
-        <div class="input-field col s12">
-          <textarea ref={newPostElement} id="textarea1" class="materialize-textarea"></textarea>
+        <div className="input-field col s12">
+          <textarea
+            ref={newPostElement}
+            id="textarea1"
+            className="materialize-textarea"
+          ></textarea>
           <label for="textarea1">Textarea</label>
-          <button onClick={addMessage} class="btn waves-effect waves-light" type="submit" name="action">Submit
-           <SendIcon />
+          <button
+            onClick={addMessage}
+            className="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+            Submit
+            <SendIcon />
           </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Messages;

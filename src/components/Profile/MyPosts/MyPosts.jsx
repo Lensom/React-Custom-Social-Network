@@ -1,21 +1,19 @@
-import React from 'react';
-import Post from './Post/Post';
-import NewPost from './NewPost/NewPost';
-import './MyPosts.css';
-
+import React from "react";
+import Post from "./Post/Post";
+import NewPost from "./NewPost/NewPost";
+import "./MyPosts.css";
 
 const MyPosts = (props) => {
-
-  let postItem = props.posts.map(e => <Post id={e.id} message={e.msg} likesCount={e.likesCount} />);
+  let postItem = props.posts.map(({ id, msg, likesCount }) => (
+    <Post id={id} message={msg} likesCount={likesCount} key={id} />
+  ));
 
   return (
     <div className="user__tape">
       <NewPost state={props} />
-      <div className="user__posts">
-        {postItem}
-      </div>
-    </div >
-  )
-}
+      <div className="user__posts">{postItem}</div>
+    </div>
+  );
+};
 
 export default MyPosts;

@@ -1,19 +1,18 @@
-import React from 'react';
-import './FriendItem.css';
+import React from "react";
+import "./FriendItem.css";
 
 const FriendItem = (props) => {
+  const { link, id, img, name } = props;
   return (
     <li className="friends__item">
-      <a href={props.link} id={props.id} className="friend__link">
+      <a href={link} id={id} className="friend__link">
         <div className="friend__photo">
-          <img src={props.img} alt="" />
+          <img src={img} alt="" />
         </div>
-        <div className="friend__name">
-          {props.name}
-        </div>
+        <div className="friend__name">{name}</div>
       </a>
     </li>
-  )
-}
+  );
+};
 
 export default FriendItem;

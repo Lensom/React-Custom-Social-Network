@@ -1,17 +1,18 @@
-import React from 'react';
-import FriendItem from './FriendItem/FriendItem';
-import './Friends.css';
+import React from "react";
+import FriendItem from "./FriendItem/FriendItem";
+import "./Friends.css";
 
-const Friends = (props) => {
-
-  let friendItems = props.state.friends.map(e => <FriendItem id={e.id} img={e.img} name={e.name} link={e.link} />)
+const Friends = ({ state }) => {
+  const friendItems = state.friends.map(({ id, img, name, link }) => (
+    <FriendItem id={id} img={img} name={name} link={link} key={id} />
+  ));
 
   return (
     <ul className="friends">
       <li className="friends__title friends__item">Top friends:</li>
       {friendItems}
     </ul>
-  )
-}
+  );
+};
 
 export default Friends;
