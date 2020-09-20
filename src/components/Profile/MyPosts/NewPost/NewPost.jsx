@@ -3,7 +3,8 @@ import "./NewPost.css";
 import SendIcon from "@material-ui/icons/Send";
 import M from "materialize-css";
 
-const NewPost = ({ state }) => {
+const NewPost = (props) => {
+  const { state } = props;
   const newPostElement = React.createRef();
 
   useEffect(() => {
@@ -16,7 +17,8 @@ const NewPost = ({ state }) => {
 
   const onPostChange = () => {
     let text = newPostElement.current.value;
-    state.updateNewPostText(text);
+    let action = { type: "UPDATE-NEW-POST-TEXT", newText: text };
+    props.dispatch(action);
   };
 
   return (

@@ -13,7 +13,7 @@ import Settings from "./components/Settings/Settings";
 import { Route, BrowserRouter } from "react-router-dom";
 
 const App = (props) => {
-  const { state, addPost, updateNewPostText } = props;
+  const { state } = props;
 
   return (
     <BrowserRouter>
@@ -28,8 +28,7 @@ const App = (props) => {
                 render={() => (
                   <Profile
                     profilePage={state.profilePage}
-                    addPost={addPost}
-                    updateNewPostText={updateNewPostText}
+                    dispatch={props.dispatch}
                   />
                 )}
               />

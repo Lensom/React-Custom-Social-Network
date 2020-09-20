@@ -12,10 +12,10 @@ const Messages = ({ state }) => {
   const newPostElement = React.createRef();
 
   let dialogsElements = dialogs.map(({ id, name, img }) => (
-    <DialogItem id={id} name={name} img={img} />
+    <DialogItem id={id} name={name} img={img} key={id} />
   ));
   let messagesElements = messages.map(({ id, msg }) => (
-    <MessageItem id={id} message={msg} />
+    <MessageItem id={id} message={msg} key={id} />
   ));
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Messages = ({ state }) => {
             id="textarea1"
             className="materialize-textarea"
           ></textarea>
-          <label for="textarea1">Textarea</label>
+          <label htmlFor="textarea1">Textarea</label>
           <button
             onClick={addMessage}
             className="btn waves-effect waves-light"
